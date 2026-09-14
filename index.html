@@ -353,13 +353,70 @@
 
     <form class="contact-form reveal" id="leadForm">
       <div class="two">
-        <label>Name<input type="text" name="name" placeholder="Your name" required></label>
-        <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@company.com" required>
+        </label>
       </div>
-      <label>Website<input type="url" name="website" placeholder="https://yourbrand.com"></label>
-      <label>What do you need?<textarea name="message" rows="5" placeholder="Tell us about your brand and goals." required></textarea></label>
-      <button class="btn btn-red submit" type="submit">REQUEST MY QUORA PLAN →</button>
-      <small>Connect Formspree or your own backend before launch.</small>
+
+      <label>
+        Website
+        <input type="url" name="website" placeholder="https://yourbrand.com">
+      </label>
+
+      <div class="two">
+        <label>
+          Quora Service
+          <select name="service" required>
+            <option value="" selected disabled>Select a service</option>
+            <option>Full Quora Growth Strategy</option>
+            <option>Quora Positioning & Brand Audit</option>
+            <option>Expert Answer Campaigns</option>
+            <option>Search + AI Discovery</option>
+            <option>Founder / Expert Profile Management</option>
+            <option>Reputation & Competitor Monitoring</option>
+            <option>Reporting & Growth Optimization</option>
+            <option>Not Sure — Recommend a Plan</option>
+          </select>
+        </label>
+
+        <label>
+          Primary Goal
+          <select name="goal" required>
+            <option value="" selected disabled>Select your main goal</option>
+            <option>Brand Visibility</option>
+            <option>Lead Generation</option>
+            <option>Google / Search Visibility</option>
+            <option>AI / GEO Mentions</option>
+            <option>Brand Reputation / ORM</option>
+            <option>Founder Thought Leadership</option>
+            <option>Competitor Positioning</option>
+            <option>Multiple Goals</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="hp-field" aria-hidden="true">
+        <label>
+          Company
+          <input type="text" name="company" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <label>
+        Tell us about your brand
+        <textarea name="message" rows="5" placeholder="What do you sell, who do you want to reach, and what are you trying to achieve on Quora?" required></textarea>
+      </label>
+
+      <button class="btn btn-red submit" id="submitBtn" type="submit">REQUEST MY QUORA PLAN →</button>
+      <small id="formStatus" class="form-status" aria-live="polite">
+        We’ll review your brand and reply with a tailored Quora plan.
+      </small>
     </form>
   </div>
 </section>

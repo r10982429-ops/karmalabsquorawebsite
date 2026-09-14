@@ -44,49 +44,31 @@ button, input, textarea { font: inherit; }
 }
 
 .brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
   flex-shrink: 0;
-  min-width: max-content;
 }
-
 .brand img {
-  width: 58px;
-  height: 58px;
-  display: block;
-  object-fit: contain;
-  flex: 0 0 58px;
-  background: #ffffff;
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
   border: 2px solid var(--ink);
   border-radius: 12px;
   box-shadow: 3px 3px 0 var(--ink);
 }
-
-.brand div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  line-height: 1;
-  min-width: 0;
-}
-
+.brand div { display: flex; flex-direction: column; line-height: 1; }
 .brand strong {
   font-family: "Archivo Black", sans-serif;
   font-size: 18px;
-  line-height: 1;
-  white-space: nowrap;
 }
-
 .brand span {
-  margin-top: 6px;
+  margin-top: 5px;
   color: var(--blue);
   font-size: 9px;
-  line-height: 1;
   font-weight: 900;
   letter-spacing: 1.5px;
-  white-space: nowrap;
 }
 
 nav {
@@ -675,6 +657,7 @@ details p {
   font-weight: 900;
 }
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   margin-top: 8px;
@@ -685,7 +668,30 @@ details p {
   outline: none;
 }
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus { box-shadow: 3px 3px 0 var(--blue); }
+
+.contact-form select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 42px;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+    linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 12px) 50%;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
 .submit { width: 100%; border: 2px solid var(--ink); }
 .contact-form small {
   display: block;
@@ -813,4 +819,32 @@ footer {
   .mini-card { width: 145px; padding: 12px; }
   .process-grid { grid-template-columns: 1fr; }
   .contact-form { padding: 22px; }
+}
+
+
+/* Header/footer logo alignment fix */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  min-width: max-content;
+}
+.brand img {
+  width: 58px;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 58px;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.brand div {
+  min-width: 0;
+}
+.brand strong,
+.brand span {
+  white-space: nowrap;
 }
