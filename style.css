@@ -44,31 +44,49 @@ button, input, textarea { font: inherit; }
 }
 
 .brand {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   flex-shrink: 0;
+  min-width: max-content;
 }
+
 .brand img {
-  width: 54px;
-  height: 54px;
-  object-fit: cover;
+  width: 58px;
+  height: 58px;
+  display: block;
+  object-fit: contain;
+  flex: 0 0 58px;
+  background: #ffffff;
   border: 2px solid var(--ink);
   border-radius: 12px;
   box-shadow: 3px 3px 0 var(--ink);
 }
-.brand div { display: flex; flex-direction: column; line-height: 1; }
+
+.brand div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  min-width: 0;
+}
+
 .brand strong {
   font-family: "Archivo Black", sans-serif;
   font-size: 18px;
+  line-height: 1;
+  white-space: nowrap;
 }
+
 .brand span {
-  margin-top: 5px;
+  margin-top: 6px;
   color: var(--blue);
   font-size: 9px;
+  line-height: 1;
   font-weight: 900;
   letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
 nav {
